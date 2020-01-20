@@ -1,0 +1,29 @@
+﻿
+@model List<ASP.Models.Student>
+
+<div>
+    <h1>All Students</h1>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Faculty</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Id</td>
+                        <td>@user.Name</td>
+                        <td>@user.Faculty</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

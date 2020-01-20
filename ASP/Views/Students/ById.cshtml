@@ -1,0 +1,46 @@
+﻿
+@model ASP.Models.Student
+
+
+
+@using (Html.BeginForm("ById", "Students", FormMethod.Get))
+{
+    @Html.TextBox("id")
+    <input type="submit" value="Search" />
+
+}
+    <div>
+        <h1>Student by Id</h1>
+    </div>
+
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Faculty</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{if (Model == null)
+                    {
+                        <td colspan="3">No match</td>
+                    }
+                    else
+                    {
+                <tr>
+                    <td>@Model.Id</td>
+                    <td>@Model.Name</td>
+                    <td>@Model.Faculty</td>
+                </tr>
+                        }
+                    }
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
